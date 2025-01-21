@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { lazy, StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -8,6 +8,8 @@ import Layout from "./components/Layout.tsx";
 import { NotFound } from "./components/NotFound.tsx";
 import { SidebarProvider } from "./components/ui/sidebar.tsx";
 import { ThemeProvider } from "./components/theme-provider.tsx";
+
+const PatientRecords = lazy(() => import("hs-patient-records/PatientRecords"));
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -19,6 +21,14 @@ createRoot(document.getElementById("root")!).render(
               <Routes>
                 <Route path="/" element={<Layout />}>
                   <Route index element={<Home />} />
+                  <Route
+                    path="/patient-records"
+                    element={
+                      <Suspense fallback={<div>Loading...</div>}>
+                        <PatientRecords />
+                      </Suspense>
+                    }
+                  />
                 </Route>
                 <Route path="*" element={<NotFound />} />
               </Routes>
