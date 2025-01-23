@@ -1,3 +1,4 @@
+import "@/index.css";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -6,8 +7,9 @@ import { patients } from "@/data/dummy-data";
 import { Badge } from "@/components/ui/badge";
 
 export default function PatientRecords() {
+  console.log(localStorage.getItem("vite-ui-theme"));
   return (
-    <div className="space-y-4 md:space-y-6">
+    <div className="space-y-4 md:space-y-6 dark:text-white">
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <h1 className="text-2xl font-bold tracking-tight md:text-3xl">
           Patient Records

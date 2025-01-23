@@ -11,8 +11,12 @@ export default defineConfig({
       name: "home",
       remotes: {
         "hs-patient-records": "http://localhost:5174/assets/remoteEntry.js",
+        "hs-comp-library": "http://localhost:5175/assets/remoteEntry.js",
       },
-      shared: ["react", "react-dom"],
+      shared: {
+        react: { version: '*' },
+        'react-dom': { version: '*' }
+      }
     }),
   ],
   resolve: {

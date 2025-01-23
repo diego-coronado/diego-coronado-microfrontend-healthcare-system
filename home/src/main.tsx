@@ -1,13 +1,13 @@
 import { lazy, StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ThemeProvider } from "hs-comp-library/components";
 
 import "./index.css";
 import Home from "./pages/Home.tsx";
 import Layout from "./components/Layout.tsx";
 import { NotFound } from "./components/NotFound.tsx";
 import { SidebarProvider } from "./components/ui/sidebar.tsx";
-import { ThemeProvider } from "./components/theme-provider.tsx";
 
 const PatientRecords = lazy(() => import("hs-patient-records/PatientRecords"));
 

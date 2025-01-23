@@ -1,6 +1,6 @@
 import { Bell, User } from "lucide-react";
+import { ThemeToggle } from "hs-comp-library/components";
 
-import { ThemeToggle } from "./ThemeToggle";
 import { Button } from "@/components/ui/button";
 
 export function Header() {
