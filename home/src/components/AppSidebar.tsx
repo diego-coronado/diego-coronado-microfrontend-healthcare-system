@@ -4,7 +4,6 @@ import {
   Receipt,
   Pill,
   FlaskConical,
-  Menu,
 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -13,7 +12,6 @@ import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Sidebar as SidebarPrimitive,
-  SidebarTrigger,
   SidebarContent,
 } from "@/components/ui/sidebar";
 
@@ -32,16 +30,6 @@ export function AppSidebar() {
     <SidebarPrimitive className="border-r bg-background dark:bg-gray-800 dark:border-gray-700">
       <div className="flex flex-col h-full">
         <div className="flex h-16 items-center border-b px-4 dark:border-gray-700">
-          <SidebarTrigger>
-            <Button
-              variant="ghost"
-              type="button"
-              size="icon"
-              className="lg:hidden"
-            >
-              <Menu className="h-6 w-6" />
-            </Button>
-          </SidebarTrigger>
           <div className="flex w-full items-center gap-2 lg:ml-2">
             <span className="font-semibold dark:text-white">HealthCare</span>
           </div>

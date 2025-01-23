@@ -12,6 +12,9 @@ export default defineConfig({
       exposes: {
         "./PatientRecords": "./src/pages/PatientRecords.tsx",
       },
+      remotes: {
+        "hs-comp-library": "http://localhost:5175/assets/remoteEntry.js",
+      },
       shared: ["react", "react-dom"],
     }),
   ],

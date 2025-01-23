@@ -10,12 +10,12 @@ export default defineConfig({
       name: "hs-comp-library",
       filename: "remoteEntry.js",
       exposes: {
-        "./components": "./src/components/index.ts"
+        "./components": "./src/components/index.ts",
       },
       shared: {
-        react: { version: '*' },
-        'react-dom': { version: '*' }
-      }
+        react: { version: "*" },
+        "react-dom": { version: "*" },
+      },
     }),
   ],
   resolve: {

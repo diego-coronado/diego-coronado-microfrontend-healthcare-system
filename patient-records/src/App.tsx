@@ -1,11 +1,7 @@
-import PatientRecords from "./pages/PatientRecords";
+// import PatientRecords from "./pages/PatientRecords";
 
 function App() {
-  return (
-    <>
-      <PatientRecords />
-    </>
-  );
+  return <>{/* <PatientRecords /> */}</>;
 }
 
 export default App;
