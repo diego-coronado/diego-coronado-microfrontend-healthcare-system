@@ -10,6 +10,10 @@ import { NotFound } from "./components/NotFound.tsx";
 import { SidebarProvider } from "./components/ui/sidebar.tsx";
 
 const PatientRecords = lazy(() => import("hs-patient-records/PatientRecords"));
+const Appointments = lazy(() => import("hs-appointments/Appointments"));
+const Billing = lazy(() => import("hs-billing/Billing"));
+const Laboratory = lazy(() => import("hs-laboratory/Laboratory"));
+const Pharmacy = lazy(() => import("hs-pharmacy/Pharmacy"));
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -26,6 +30,38 @@ createRoot(document.getElementById("root")!).render(
                     element={
                       <Suspense fallback={<div>Loading...</div>}>
                         <PatientRecords />
+                      </Suspense>
+                    }
+                  />
+                  <Route
+                    path="/appointments"
+                    element={
+                      <Suspense fallback={<div>Loading...</div>}>
+                        <Appointments />
+                      </Suspense>
+                    }
+                  />
+                  <Route
+                    path="/billing"
+                    element={
+                      <Suspense fallback={<div>Loading...</div>}>
+                        <Billing />
+                      </Suspense>
+                    }
+                  />
+                  <Route
+                    path="/pharmacy"
+                    element={
+                      <Suspense fallback={<div>Loading...</div>}>
+                        <Pharmacy />
+                      </Suspense>
+                    }
+                  />
+                  <Route
+                    path="/laboratory"
+                    element={
+                      <Suspense fallback={<div>Loading...</div>}>
+                        <Laboratory />
                       </Suspense>
                     }
                   />
