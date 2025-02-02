@@ -12,10 +12,7 @@ export default defineConfig({
       exposes: {
         "./components": "./src/components/index.ts",
       },
-      shared: {
-        react: { version: "*" },
-        "react-dom": { version: "*" },
-      },
+      shared: ["react", "react-dom"],
     }),
   ],
   resolve: {

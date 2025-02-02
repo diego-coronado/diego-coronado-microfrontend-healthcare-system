@@ -1,19 +1,22 @@
 import path from "path";
 import react from "@vitejs/plugin-react";
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import federation from "@originjs/vite-plugin-federation";
 
-export default defineConfig({
+export default defineConfig(({mode}) => {
+  const env = loadEnv(mode, process.cwd(), "");
+  
+  return {
   plugins: [
     react(),
     federation({
-      name: "hs-patient-records",
+      name: "hs-billing",
       filename: "remoteEntry.js",
       exposes: {
         "./Billing": "./src/pages/Billing.tsx",
       },
       remotes: {
-        "hs-comp-library": "http://localhost:5175/assets/remoteEntry.js",
+        "hs-comp-library": `${env.VITE_COMP_LIBRARY_URL}/assets/remoteEntry.js`,
       },
       shared: ["react", "react-dom"],
     }),
@@ -35,6 +38,6 @@ export default defineConfig({
     },
   },
   server: {
-    port: 5174,
+    port: 5178,
   },
-});
+}});
