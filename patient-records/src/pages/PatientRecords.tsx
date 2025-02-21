@@ -8,7 +8,7 @@ import { patients } from "@/data/dummy-data";
 import { Badge } from "@/components/ui/badge";
 
 export default function PatientRecords() {
-  console.log(localStorage.getItem("vite-ui-theme"));
+
   return (
     <div className="space-y-4 md:space-y-6 dark:text-white">
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
