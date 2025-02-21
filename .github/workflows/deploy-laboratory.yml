@@ -33,7 +33,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-1
       - name: Deploy to S3
-        run: aws s3 sync dist/ s3://${{ secrets.S3_BUCKET_NAME }}/latest/ --delete
+        run: aws s3 sync dist/ s3://${{ secrets.S3_BUCKET_NAME }}/laboratory/latest/ --delete
       - name: Invalidate CloudFront
         run: |
           aws cloudfront create-invalidation \
