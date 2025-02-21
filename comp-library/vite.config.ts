@@ -31,6 +31,7 @@ export default defineConfig({
       },
     },
   },
+  base: "/latest",
   server: {
     port: 5175,
   },
