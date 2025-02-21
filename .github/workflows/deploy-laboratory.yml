@@ -1,7 +1,16 @@
-name: Deploy Pharmacy
+name: Deploy Laboratory
 
 on:
-  workflow_dispatch
+  push:
+    branches:
+      - main
+    paths:
+      - 'laboratory/**'
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: laboratory
 
 jobs:
   deploy:
@@ -24,9 +33,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-1
       - name: Deploy to S3
-        run: aws s3 sync dist/ s3://${{ secrets.S3_BUCKET_NAME }}/pharmacy/latest/ --delete
+        run: aws s3 sync dist/ s3://laboratory-healthcare-frontend/ --delete
       - name: Invalidate CloudFront
         run: |
           aws cloudfront create-invalidation \
             --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
-            --paths "/pharmacy/latest/assets/remoteEntry.js" 
+            --paths "/laboratory/latest/assets/remoteEntry.js" 

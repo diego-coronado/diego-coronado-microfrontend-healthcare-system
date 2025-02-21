@@ -1,7 +1,16 @@
 name: Deploy Pharmacy
 
 on:
-  workflow_dispatch
+  push:
+    branches:
+      - main
+    paths:
+      - 'pharmacy/**'
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: pharmacy
 
 jobs:
   deploy:
