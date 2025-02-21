@@ -32,7 +32,7 @@ export default defineConfig({
       }
     }
   },
-  base: "/comp-library/latest",
+  // base: "/comp-library/latest",
   server: {
     port: 5175,
   },
