@@ -1,16 +1,16 @@
-name: Deploy Component Library
+name: Deploy Billing
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'comp-library/**'
+      - 'billing/**'
   workflow_dispatch:
 
 defaults:
   run:
-    working-directory: comp-library
+    working-directory: billing
 
 jobs:
   deploy:
@@ -24,6 +24,8 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+        env:
+          VITE_COMP_LIBRARY_URL: ${{ secrets.COMP_LIBRARY_URL }}
       - name: Configure AWS
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -31,9 +33,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-1
       - name: Deploy to S3
-        run: aws s3 sync dist/ s3://${{ secrets.S3_BUCKET_NAME }}/comp-library/latest/ --delete
+        run: aws s3 sync dist/ s3://${{ secrets.S3_BUCKET_NAME }}/billing/latest/ --delete
       - name: Invalidate CloudFront
         run: |
           aws cloudfront create-invalidation \
             --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
-            --paths "/comp-library/latest/assets/remoteEntry.js" 
+            --paths "/billing/latest/assets/remoteEntry.js"
