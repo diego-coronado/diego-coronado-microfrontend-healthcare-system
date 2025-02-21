@@ -37,7 +37,7 @@ export default defineConfig(({mode}) => {
       },
     },
   },
-  base: "/latest",
+  base: "/billing/latest",
   server: {
     port: 5178,
   },
