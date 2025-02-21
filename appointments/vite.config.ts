@@ -37,7 +37,7 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
-    base: "/appointments/latest",
+    // base: "/appointments/latest",
     server: {
       port: 5177,
     },
