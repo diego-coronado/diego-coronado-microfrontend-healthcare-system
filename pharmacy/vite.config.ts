@@ -37,7 +37,7 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
-    base: "/pharmacy/latest",
+    // base: "/pharmacy/latest",
     server: {
       port: 5176,
     },

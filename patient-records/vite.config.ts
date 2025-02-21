@@ -38,7 +38,7 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
-    base: "/patient-records/latest",
+    // base: "/patient-records/latest",
     server: {
       port: 5174,
     },

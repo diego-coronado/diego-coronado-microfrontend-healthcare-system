@@ -37,7 +37,7 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
-    base: "/laboratory/latest",
+    // base: "/laboratory/latest",
     server: {
       port: 5179,
     },
