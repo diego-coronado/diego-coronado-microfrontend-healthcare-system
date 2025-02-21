@@ -19,10 +19,7 @@ export default defineConfig(({ mode }) => {
           "hs-billing": `${env.VITE_BILLING_URL}/assets/remoteEntry.js`,
           "hs-laboratory": `${env.VITE_LABORATORY_URL}/assets/remoteEntry.js`,
         },
-        shared: {
-          react: { version: "*" },
-          "react-dom": { version: "*" },
-        },
+        shared: ["react", "react-dom", "tailwindcss"]
       }),
     ],
     resolve: {

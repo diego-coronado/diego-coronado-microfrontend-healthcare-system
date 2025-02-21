@@ -18,7 +18,7 @@ export default defineConfig(({mode}) => {
       remotes: {
         "hs-comp-library": `${env.VITE_COMP_LIBRARY_URL}/assets/remoteEntry.js`,
       },
-      shared: ["react", "react-dom"],
+      shared: ["react", "react-dom", "tailwindcss"],
     }),
   ],
   resolve: {

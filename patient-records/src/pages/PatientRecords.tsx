@@ -1,4 +1,4 @@
-import "@/index.css";
+// import "@/index.css";
 import "tailwindcss/tailwind.css";
 // import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Card, CardContent, CardHeader, CardTitle } from "hs-comp-library/components";

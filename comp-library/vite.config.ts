@@ -12,7 +12,7 @@ export default defineConfig({
       exposes: {
         "./components": "./src/components/index.ts",
       },
-      shared: ["react", "react-dom"],
+      shared: ["react", "react-dom", "tailwindcss"],
     }),
   ],
   resolve: {
