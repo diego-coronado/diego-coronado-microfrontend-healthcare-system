@@ -28,17 +28,12 @@ export default defineConfig({
     rollupOptions: {
       output: {
         inlineDynamicImports: false,
-        assetFileNames: 'assets/[name][extname]'
+
       }
     }
   },
-  base: "/comp-library/latest",
+  // base: "/comp-library/latest",
   server: {
     port: 5175,
   },
-  experimental: {
-    renderBuiltUrl(filename: string) {
-      return `/comp-library/latest/assets/${filename}`
-    }
-  }
 });
